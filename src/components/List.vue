@@ -63,6 +63,7 @@ export default {
     }
   },
   methods: {
+      //监听滚动事件
     handleScroll() {
       let scrollTop = this.$refs.container.scrollTop;
       //向上取整start的位置
