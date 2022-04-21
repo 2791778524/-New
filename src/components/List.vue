@@ -52,14 +52,14 @@ export default {
       return this.size * this.items.length - 1 + "px";
     },
     listTop() {
-        return this.size * this.start + 'px'
+        return this.size * this.start + 'px';
     }
   },
   methods: {
     handleScroll() {
       let scrollTop = this.$refs.container.scrollTop;
       this.start = Math.floor(scrollTop / this.size)
-      this.end = this.start + this.showNumber
+      this.end = this.start + this.showNumber;
     },
   },
 };
