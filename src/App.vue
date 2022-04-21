@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <List :items="items" :size="60" :showNumber="10"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import List from './components/List.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    List
+  },
+  computed:{
+    items() {
+      return Array(10000).fill('').map((item, index)=>({
+        id: index,
+        content: '列表内容' + index
+      }))
+    }
+  },
 }
 </script>
 
