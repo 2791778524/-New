@@ -46,7 +46,7 @@ export default {
     showData() {
       return this.items.slice(this.start, this.end);
     },
-    //设置展示列表数量的宽度
+    //设置展示列表数量的高度
     containerHeight() {
       return this.size * this.showNumber + "px";
     },
@@ -54,7 +54,7 @@ export default {
     barheight() {
       return this.size * this.items.length + "px";
     },
-    //设置为一列表数量的宽度
+    //设置为一列表数量的高度
     listTop() {
         return this.size * this.start + 'px';
     }
