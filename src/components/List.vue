@@ -22,14 +22,17 @@
 <script>
 export default {
   props: {
+      //所有列表
     items: {
       type: Array,
       required: true,
     },
+    //每列的高度
     size: {
       type: Number,
       required: true,
     },
+    //显示几条数据
     showNumber: {
       type: Number,
       required: true,
@@ -52,7 +55,7 @@ export default {
     },
     //设置所有列表的宽度撑开
     barheight() {
-      return this.size * this.items.length + "px";
+      return this.size * this.items.length - 1 + "px";
     },
     //设置为一列表数量的高度
     listTop() {
