@@ -68,6 +68,7 @@ export default {
       //向上取整start的位置
       this.start = Math.floor(scrollTop / this.size)
       this.end = this.start + this.showNumber;
+      console.log(this.start, this.end);
     },
   },
 };
