@@ -42,15 +42,19 @@ export default {
     };
   },
   computed: {
+    //截取要展示的列表start~end
     showData() {
       return this.items.slice(this.start, this.end);
     },
+    //设置展示列表数量的宽度
     containerHeight() {
       return this.size * this.showNumber + "px";
     },
+    //设置所有列表的宽度撑开
     barheight() {
-      return this.size * this.items.length - 1 + "px";
+      return this.size * this.items.length + "px";
     },
+    //设置为一列表数量的宽度
     listTop() {
         return this.size * this.start + 'px';
     }
@@ -58,6 +62,7 @@ export default {
   methods: {
     handleScroll() {
       let scrollTop = this.$refs.container.scrollTop;
+      //向上取整start的位置
       this.start = Math.floor(scrollTop / this.size)
       this.end = this.start + this.showNumber;
     },
@@ -68,7 +73,7 @@ export default {
 <style>
 .container {
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   background: rgb(150, 195, 232);
   font-size: 20px;
   font-weight: bold;
