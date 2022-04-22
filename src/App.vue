@@ -14,8 +14,8 @@ import LazyImage from './components/LazyImage.vue'
 export default {
   name: 'App',
   components: {
-    List,
-    NewList,
+    // List,
+    // NewList,
     LazyImage
   },
   computed:{
