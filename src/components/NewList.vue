@@ -1,4 +1,5 @@
 <template>
+<!-- 虚拟列表实现 -->
   <div class="container" :style="{height: containerHeight}" @scroll="handleScroll" ref='containerRef'>
       <div class="list"
       :style="{top: topHeight}">
@@ -27,7 +28,7 @@ export default {
     data() {
         return{
             start: 0,
-            end: this.showNumber
+            end: this.showNumber,
         }
     },
     computed:{
