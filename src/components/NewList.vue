@@ -50,6 +50,7 @@ export default {
             let scrollTop = this.$refs.containerRef.scrollTop;
             this.start = Math.floor(scrollTop / this.size)
             this.end = this.start + this.showNumber
+            console.log(this.start, this.end);
         }
     }
 }
