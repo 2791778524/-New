@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <List :items="items" :size="60" :showNumber="10"/>
+    <!-- <List :items="items" :size="60" :showNumber="10"/> -->
+    <new-list :items="items" :size="60" :showNumber="10"/>
   </div>
 </template>
 
 <script>
 import List from './components/List.vue'
+import NewList from './components/NewList.vue'
 export default {
   name: 'App',
   components: {
-    List
+    List,
+    NewList
   },
   computed:{
     items() {
