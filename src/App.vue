@@ -2,18 +2,21 @@
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- <List :items="items" :size="60" :showNumber="10"/> -->
-    <new-list :items="items" :size="60" :showNumber="10"/>
+    <!-- <new-list :items="items" :size="60" :showNumber="10"/> -->
+    <LazyImage></LazyImage>
   </div>
 </template>
 
 <script>
 import List from './components/List.vue'
 import NewList from './components/NewList.vue'
+import LazyImage from './components/LazyImage.vue'
 export default {
   name: 'App',
   components: {
     List,
-    NewList
+    NewList,
+    LazyImage
   },
   computed:{
     items() {
