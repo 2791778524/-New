@@ -22,12 +22,6 @@ export default {
         content: '列表内容' + index
       }))
     },
-    items2() {
-      return Array(10000).fill('').map((item, index)=>({
-        id:index,
-        contetn: '列表内容' + index
-      }))
-    }
   },
 }
 </script>
