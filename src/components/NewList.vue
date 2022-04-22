@@ -33,7 +33,7 @@ export default {
     },
     computed:{
         containerHeight() {
-            return this.showNumber * this.size + 'px'
+            return this.showNumber * this.size + 'px' 
         },
         showData() {
             return this.items.slice(this.start, this.end)
