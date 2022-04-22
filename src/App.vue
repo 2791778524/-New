@@ -29,10 +29,6 @@ export default {
       }))
     }
   },
-  mounted(){
-    console.log(this.$children.length);
-    console.log(this.items, this.items2);
-  }
 }
 </script>
 
