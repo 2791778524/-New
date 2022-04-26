@@ -49,18 +49,27 @@ export default {
           }, 1000);
         } else {
           console.log("我已经给不了你更多了");
+          this.scroll.finishPullUp();
           return;
         }
       });
       //下拉刷新
       this.scroll.on("pullingDown", () => {
-        setTimeout(() => {
-          this.end = this.start;
-          this.start = this.end - this.showNumber;
-          this.dataInfo = this.items.slice(this.start, this.end);
+        if (this.start > 0) {
+          setTimeout(() => {
+            this.end = this.start;
+            this.start = this.end - this.showNumber;
+            this.dataInfo = this.items.slice(this.start, this.end);
+            console.log(this.end, this.start);
+            console.log(this.dataInfo);
+            this.scroll.finishPullDown();
+            console.log("下拉刷新加载内容");
+          }, 1000);
+        } else {
+          console.log("到顶了");
           this.scroll.finishPullDown();
-          console.log("下拉刷新加载内容");
-        }, 1000);
+          return;
+        }
       });
     });
   },
