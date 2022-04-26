@@ -64,9 +64,7 @@ export default {
   },
   computed: {
     items() {
-      return Array(66)
-        .fill("")
-        .map((item, index) => ({ id: index, content: index + "单元" }));
+      return Array(66).fill("").map((item, index) => ({ id: index, content: index + "单元" }));
     },
   },
 };
