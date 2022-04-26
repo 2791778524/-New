@@ -15,7 +15,7 @@ export default {
     return {
       scroll: "",
       dataInfo: [],
-      showNumber: 10,
+      showNumber: 15,
       start: 0,
       end: 0,
     };
@@ -47,7 +47,7 @@ export default {
             this.scroll.finishPullUp();
           }, 1000);
         } else {
-          console.log("到底了");
+          console.log("我已经给不了你更多了");
           return;
         }
       });
