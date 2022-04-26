@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper" ref="wrapperRef">
-    <div class="content">
-      <div class="item" v-for="item in items" :key="item.id">
+    <div class="content" ref="contentRef">
+      <div class="item" v-for="item in dataInfo" :key="item.id">
         {{ item.content }}
       </div>
     </div>
@@ -14,10 +14,16 @@ export default {
   data() {
     return {
       scroll: "",
+      dataInfo: [],
+      showNumber: 10,
+      start: 0,
+      end: 0,
     };
   },
   methods: {},
   mounted() {
+    this.end = this.showNumber;
+    this.dataInfo = this.items.slice(this.start, this.end);
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapperRef, {
         scrollY: true,
@@ -32,23 +38,33 @@ export default {
         },
       });
       this.scroll.on("pullingUp", () => {
-        setTimeout(() => {
-          this.scroll.finishPullUp();
-          console.log('加载剩下的内容');
-        }, 1000);
+        if (this.end < this.items.length) {
+          setTimeout(() => {
+            this.start = this.end;
+            this.end = this.start + this.showNumber;
+            this.dataInfo = this.items.slice(this.start, this.end);
+            console.log("加载成功");
+            this.scroll.finishPullUp();
+          }, 1000);
+        } else {
+          console.log("到底了");
+          return;
+        }
       });
       this.scroll.on("pullingDown", () => {
-        console.log("22222");
         setTimeout(() => {
+          this.end = this.start;
+          this.start = this.end - this.showNumber;
+          this.dataInfo = this.items.slice(this.start, this.end);
           this.scroll.finishPullDown();
-          console.log('下拉刷新加载内容');
+          console.log("下拉刷新加载内容");
         }, 1000);
       });
     });
   },
   computed: {
     items() {
-      return Array(100)
+      return Array(66)
         .fill("")
         .map((item, index) => ({ id: index, content: index + "单元" }));
     },
@@ -58,14 +74,14 @@ export default {
 
 <style>
 #wrapper {
-  height: 400px;
+  height: 450px;
   overflow: hidden;
   width: 100%;
   text-align: center;
 }
 .item {
-  height: 20px;
-  line-height: 20px;
+  height: 50px;
+  line-height: 50px;
   width: 100%;
 }
 </style>
