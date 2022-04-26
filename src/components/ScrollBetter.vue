@@ -37,6 +37,7 @@ export default {
           stop: 20,
         },
       });
+      //上拉加载
       this.scroll.on("pullingUp", () => {
         if (this.end < this.items.length) {
           setTimeout(() => {
@@ -51,6 +52,7 @@ export default {
           return;
         }
       });
+      //下拉刷新
       this.scroll.on("pullingDown", () => {
         setTimeout(() => {
           this.end = this.start;
@@ -64,7 +66,9 @@ export default {
   },
   computed: {
     items() {
-      return Array(66).fill("").map((item, index) => ({ id: index, content: index + "单元" }));
+      return Array(66)
+        .fill("")
+        .map((item, index) => ({ id: index, content: index + "单元" }));
     },
   },
 };
