@@ -13,7 +13,7 @@ import BScroll from "better-scroll";
 export default {
   data() {
     return {
-        scroll:''
+      scroll: "",
     };
   },
   methods: {},
@@ -21,12 +21,36 @@ export default {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapperRef, {
         scrollY: true,
+        pullUpLoad: {
+          threshold: -30,
+        },
+        pullDownRefresh: {
+          // 下拉距离超过30px触发pullingDown事件
+          threshold: 30,
+          // 回弹停留在距离顶部20px的位置
+          stop: 20,
+        },
+      });
+      this.scroll.on("pullingUp", () => {
+        setTimeout(() => {
+          this.scroll.finishPullUp();
+          console.log('加载剩下的内容');
+        }, 1000);
+      });
+      this.scroll.on("pullingDown", () => {
+        console.log("22222");
+        setTimeout(() => {
+          this.scroll.finishPullDown();
+          console.log('下拉刷新加载内容');
+        }, 1000);
       });
     });
   },
   computed: {
     items() {
-      return Array(1000).fill("").map((item, index) => ({ id: index, content: index + "单元" }));
+      return Array(100)
+        .fill("")
+        .map((item, index) => ({ id: index, content: index + "单元" }));
     },
   },
 };
@@ -37,9 +61,11 @@ export default {
   height: 400px;
   overflow: hidden;
   width: 100%;
+  text-align: center;
 }
 .item {
   height: 20px;
   line-height: 20px;
+  width: 100%;
 }
 </style>
