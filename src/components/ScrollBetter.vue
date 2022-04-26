@@ -60,8 +60,6 @@ export default {
             this.end = this.start;
             this.start = this.end - this.showNumber;
             this.dataInfo = this.items.slice(this.start, this.end);
-            console.log(this.end, this.start);
-            console.log(this.dataInfo);
             this.scroll.finishPullDown();
             console.log("下拉刷新加载内容");
           }, 1000);
