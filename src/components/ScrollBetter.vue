@@ -65,7 +65,7 @@ export default {
             console.log("下拉刷新加载内容");
           }, 1000);
         } else {
-          console.log("到顶了,请下拉加载数据");
+          console.log("到顶了");
           this.scroll.finishPullDown();
           return;
         }
