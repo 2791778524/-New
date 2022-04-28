@@ -21,7 +21,7 @@ export default {
           const data_src = image.getAttribute("data-src");
           image.setAttribute("src", data_src);
           // 图片被加载后取消观察
-          observer.unobserve(image); 
+          observer.unobserve(image);
         }
       });
     });
