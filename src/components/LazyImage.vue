@@ -18,6 +18,7 @@ export default {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const image = entry.target;
+          console.log(image);
           const data_src = image.getAttribute("data-src");
           image.setAttribute("src", data_src);
           // 图片被加载后取消观察
