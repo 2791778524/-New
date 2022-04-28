@@ -67,7 +67,7 @@ export default {
           }, 1000);
         } else {
           console.log("到顶了");
-          this.scroll.finishPullDown();
+          this.scroll.finishPullDown(); 
           return;
         }
       });
