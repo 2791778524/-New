@@ -44,11 +44,12 @@ export default {
             this.start = this.end;
             this.end = this.start + this.showNumber;
             this.dataInfo = this.items.slice(this.start, this.end);
+            console.log(this.start, this.end, this.dataInfo);
             console.log("加载成功");
             this.scroll.finishPullUp();
           }, 1000);
         } else {
-          console.log("我已经给不了你更多了"); 
+          console.log("我已经给不了你更多了");
           this.scroll.finishPullUp();
           return;
         }
