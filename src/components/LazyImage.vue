@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-   <p><img data-src="../assets/image/1.png" /></p>
-   <p><img data-src="../assets/image/1.png" /></p>
-   <p><img data-src="../assets/image/1.png" /></p>
+    <p><img data-src="../assets/image/1.png" /></p>
+    <p><img data-src="../assets/image/1.png" /></p>
+    <p><img data-src="../assets/image/1.png" /></p>
   </div>
 </template>
 
