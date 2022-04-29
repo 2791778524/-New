@@ -23,7 +23,7 @@ export default {
   methods: {},
   mounted() {
     this.end = this.showNumber;
-    this.dataInfo = this.items.slice(this.start, this.end);
+    this.dataInfo = this.items.slice(this.start, this.end);  
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapperRef, {
         scrollY: true,
