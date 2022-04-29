@@ -44,8 +44,6 @@ export default {
             this.start = this.end;
             this.end = this.start + this.showNumber;
             this.dataInfo = this.items.slice(this.start, this.end);
-            console.log(this.start, this.end, this.dataInfo);
-            console.log(this.start, this.end, this.dataInfo);
             console.log("加载成功");
             this.scroll.finishPullUp();
           }, 1000);
@@ -62,8 +60,6 @@ export default {
             this.end = this.start;
             this.start = this.end - this.showNumber;
             this.dataInfo = this.items.slice(this.start, this.end);
-            console.log(this.end, this.start, this.dataInfo);
-            console.log(this.end, this.start, this.dataInfo);
             this.scroll.finishPullDown();
             console.log("下拉刷新加载内容");
           }, 1000);
