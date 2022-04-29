@@ -63,10 +63,10 @@ export default {
             this.dataInfo = this.items.slice(this.start, this.end); 
             console.log(this.end, this.start, this.dataInfo);
             this.scroll.finishPullDown(); 
-            console.log("下拉刷新加载内容");  
+            console.log("下拉刷新加载内容");
           }, 1000);
         } else {
-          console.log("到顶了"); 
+          console.log("到顶了,请上拉加载内容"); 
           this.scroll.finishPullDown(); 
           return;
         }
