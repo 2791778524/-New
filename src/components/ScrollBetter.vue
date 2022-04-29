@@ -59,14 +59,14 @@ export default {
           setTimeout(() => {
             this.end = this.start;
             this.start = this.end - this.showNumber;
-            this.dataInfo = this.items.slice(this.start, this.end);
-            console.log(this.end, this.start, this.dataInfo);
-            this.scroll.finishPullDown();
-            console.log("下拉刷新加载内容"); 
+            this.dataInfo = this.items.slice(this.start, this.end); 
+            console.log(this.end, this.start, this.dataInfo); 
+            this.scroll.finishPullDown(); 
+            console.log("下拉刷新加载内容");  
           }, 1000);
         } else {
-          console.log("到顶了");
-          this.scroll.finishPullDown();
+          console.log("到顶了"); 
+          this.scroll.finishPullDown(); 
           return;
         }
       });
@@ -74,9 +74,9 @@ export default {
   },
   computed: {
     items() {
-      return Array(66)
-        .fill("")
-        .map((item, index) => ({ id: index, content: index + "单元" })); 
+      return Array(66) 
+        .fill("") 
+        .map((item, index) => ({ id: index, content: index + "单元" }));  
     },
   },
 };
