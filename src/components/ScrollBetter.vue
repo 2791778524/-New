@@ -61,7 +61,7 @@ export default {
             this.start = this.end - this.showNumber;
             this.dataInfo = this.items.slice(this.start, this.end);
             this.scroll.finishPullDown();
-            console.log("下拉刷新加载内容");
+            console.log("下拉刷新加载内容"); 
           }, 1000);
         } else {
           console.log("到顶了");
