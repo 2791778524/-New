@@ -53,7 +53,7 @@ export default {
     containerHeight() {
       return this.size * this.showNumber + "px";
     },
-    //设置所有列表的宽度撑开
+    //设置所有列表的高度撑开
     barheight() {
       return this.size * this.items.length - 1 + "px";
     },

@@ -49,7 +49,7 @@ export default {
             this.scroll.finishPullUp();
           }, 1000);
         } else {
-          console.log("我已经给不了你更多了");
+          console.log("无");
           this.scroll.finishPullUp();
           return;
         }
