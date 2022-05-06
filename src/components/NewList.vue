@@ -32,20 +32,25 @@ export default {
         }
     },
     computed:{
+        //设置展示列表数量的高度
         containerHeight() {
             return this.showNumber * this.size + 'px' 
         },
+        //截取要展示的列表start~end
         showData() {
             return this.items.slice(this.start, this.end)
         },
+        //设置所有列表的高度撑开
         topHeight() {
             return this.start * this.size + 'px'
         },
+        //设置为一列表数量的高度
         barHeight() {
             return this.size * this.items.length + 'px'
         }
     },
     methods:{
+        //监听滚动事件
         handleScroll() {
             let scrollTop = this.$refs.containerRef.scrollTop;
             this.start = Math.floor(scrollTop / this.size)
