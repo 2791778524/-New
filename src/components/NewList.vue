@@ -53,7 +53,9 @@ export default {
         //监听滚动事件
         handleScroll() {
             let scrollTop = this.$refs.containerRef.scrollTop;
+            //设置开头的下标
             this.start = Math.floor(scrollTop / this.size)
+            //设置结束的下标
             this.end = this.start + this.showNumber;
             console.log(this.start,this.end);
         }
