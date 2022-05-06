@@ -5,8 +5,7 @@
     @scroll="handleScroll"
     ref="container"
   >
-    <div class="list"
-    :style="{top: listTop}">
+    <div class="list" :style="{ top: listTop }">
       <div
         v-for="item in showData"
         :key="item.id"
@@ -22,7 +21,7 @@
 <script>
 export default {
   props: {
-      //所有列表
+    //所有列表
     items: {
       type: Array,
       required: true,
@@ -59,15 +58,15 @@ export default {
     },
     //设置为一列表数量的高度
     listTop() {
-        return this.size * this.start + 'px';
-    }
+      return this.size * this.start + "px";
+    },
   },
   methods: {
-      //监听滚动事件
+    //监听滚动事件
     handleScroll() {
       let scrollTop = this.$refs.container.scrollTop;
       //向上取整start的位置
-      this.start = Math.floor(scrollTop / this.size)
+      this.start = Math.floor(scrollTop / this.size);
       //获取end的位置
       this.end = this.start + this.showNumber;
     },
