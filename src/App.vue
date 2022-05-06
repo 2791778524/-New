@@ -12,30 +12,42 @@
 // import List from './components/List.vue'
 // import NewList from './components/NewList.vue'
 // import LazyImage from './components/LazyImage.vue'
-import ScrollBetter from './components/ScrollBetter.vue'
+import ScrollBetter from "./components/ScrollBetter.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     // List,
     // NewList,
     // LazyImage,
-    ScrollBetter
+    ScrollBetter,
   },
-  computed:{
+  computed: {
     items() {
-      return Array(10000).fill('').map((item, index)=>({
-        id: index,
-        content: '列表内容' + index
-      }))
+      return Array(10000)
+        .fill("")
+        .map((item, index) => ({
+          id: index,
+          content: "列表内容" + index,
+        }));
     },
     items2() {
-      return Array(10000).fill('').map((item, index)=>({
-        id: index,
-        content: '列表内容二' + index
-      }))
-    }
+      return Array(10000)
+        .fill("")
+        .map((item, index) => ({
+          id: index,
+          content: "列表内容二" + index,
+        }));
+    },
+    item3() {
+      return Array(1000)
+        .fill("")
+        .map((item, index) => ({
+          id: index,
+          content: "列表内容三" + index,
+        }));
+    },
   },
-}
+};
 </script>
 
 <style>
