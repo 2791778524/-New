@@ -67,7 +67,7 @@ export default {
       let scrollTop = this.$refs.container.scrollTop;
       //向上取整start的位置
       this.start = Math.floor(scrollTop / this.size);
-      //获取end的位置
+      //设置end的位置
       this.end = this.start + this.showNumber;
     },
   },
