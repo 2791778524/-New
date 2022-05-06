@@ -57,7 +57,6 @@ export default {
             this.start = Math.floor(scrollTop / this.size)
             //设置end的位置
             this.end = this.start + this.showNumber;
-            console.log(this.start,this.end);
         }
     }
 }
